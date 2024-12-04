@@ -29,6 +29,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        Handler(Looper.getMainLooper()).postDelayed({
+            lottieLoading.cancelAnimation()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 5000)
 
     }
 }
